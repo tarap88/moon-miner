@@ -94,3 +94,5 @@ function drawUpgrades() {
 
 }
 drawUpgrades();
+
+// use the functions above to make the automatic functions, then set an interval for them
