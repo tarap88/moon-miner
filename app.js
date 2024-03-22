@@ -45,8 +45,10 @@ function update() {
     const cheeseCountElm = document.getElementById('cheese-count');
     cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-cheese pt-3"></i></h3>${cheese}`;
 
+    let iceAxeElm = document.getElementById(update.name);
+    iceAxeElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${update}`
 }
-
+update();
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
 
@@ -88,9 +90,6 @@ function drawUpgrades() {
         iceAxeElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
     })
 
-    // const cheeseCountElm = document.getElementById('cheese-count');
-    // cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-cheese pt-3"></i></h3>${cheese}`; 
-
-
+    drawUpgrades();
 }
-drawUpgrades();
+
