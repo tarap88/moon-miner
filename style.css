@@ -1,3 +1,13 @@
 .pixel-color {
     color: #6D3B8F;
 }
+
+.penguin-img {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.background {
+    background-color: #6D3B8F;
+}
