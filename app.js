@@ -34,6 +34,7 @@ let automaticUpgrades = [
 
 let cheese = 0;
 
+
 // Cheese Upgrade
 
 function mine() {
@@ -45,10 +46,9 @@ function update() {
     const cheeseCountElm = document.getElementById('cheese-count');
     cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-cheese pt-3"></i></h3>${cheese}`;
 
-    let iceAxeElm = document.getElementById(update.name);
-    iceAxeElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${update}`
 }
 update();
+
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
 
@@ -60,12 +60,13 @@ function buyIceAxe() {
         iceAxeUpgrade.quantity++;
         cheese -= iceAxeUpgrade.price;
         console.log('Purchased Ice Axe');
+        drawUpgrades();
         update();
     } else {
         console.log('No funds, No Ice Axe For You!')
     }
+
 }
-update();
 
 
 // Flamethrower Axe
@@ -84,12 +85,12 @@ function buyFlamethrower() {
 update();
 
 function drawUpgrades() {
+    console.log('drawing upgrades');
     clickUpgrades.forEach(upgrade => {
-        let iceAxeElm = document.getElementById(upgrade.name)
+        let iceAxeElm = document.getElementById(upgrade.name);
         // console.log('success', iceAxeElm);
         iceAxeElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
     })
 
-    drawUpgrades();
 }
-
+drawUpgrades();
