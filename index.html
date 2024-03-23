@@ -25,7 +25,7 @@
         </section>
     </header>
     <!-- Cheese Upgrade -->
-    <main class="container-fluid">
+    <main class="container-fluid background-light rounded">
         <section class="row justify-content-center">
             <div id="cheese-count" class="col-4 card rounded background text-light">
                 <h3><i class="mdi mdi-cheese"></i></h3>
@@ -33,40 +33,33 @@
         </section>
 
         <!-- Ice Axe Click Upgrade -->
-        <div class="container-fluid background-light rounded">
-            <section class="row ms-1">
-                <div class="col-3 card rounded background text-light">
-                    <button id="iceAxe" class="btn btn-outline-light p-2" onclick="buyIceAxe()"><i
-                            class="mdi mdi-cheese me-2 p-2">ice
-                            axe</i></button>
-                </div>
-            </section>
+        <section class="row ms-1">
+            <div class="col-3 card rounded background text-light">
+                <button id="iceAxe" class="btn btn-outline-light p-2" onclick="buyIceAxe()"><i
+                        class="mdi mdi-cheese me-2 p-2">ice
+                        axe</i></button>
+            </div>
+            <div class="col-3 card rounded background text-light">
+                <button id="igloo" class="btn btn-outline-light p-2"><i class="mdi mdi-cheese me-2 p-2">igloo
+                    </i></button>
+            </div>
+        </section>
 
-            <!-- Flamethrower Upgrade -->
-            <section class="row ms-1">
-                <div class="col-3 card rounded background text-light">
-                    <button id="flameThrower" class="btn btn-outline-light p-2"><i
-                            class="mdi mdi-cheese me-2 p-2">flame</i></button>
-                </div>
-            </section>
+        <!-- Flamethrower Upgrade -->
+        <section class="row ms-1">
+            <div class="col-3 card rounded background text-light">
+                <button id="flameThrower" class="btn btn-outline-light p-2" onclick="buyFlamethrower()"><i
+                        class="mdi mdi-cheese me-2 p-2">flame</i></button>
+            </div>
+            <div class="col-3 card rounded background text-light">
+                <button id="blizzard-count" class="btn btn-outline-light p-2"><i
+                        class="mdi mdi-cheese me-2 p-2">10</i></button>
+            </div>
+            <div class="col-3">
+                <h5 class="pt-2">Blizzard</h5>
+            </div>
+        </section>
 
-            <!-- Igloo Automatic Upgrade -->
-            <div class="container-fluid">
-                <section class="row">
-                    <div class="col-3 card rounded background text-light">
-                        <button id="igloo-count" class="btn btn-outline-light p-2"><i
-                                class="mdi mdi-cheese me-2 p-2">igloo
-                            </i></button>
-                    </div>
-                </section>
-
-                <!-- Blizzard Automatic Upgrade -->
-                <section class="row">
-                    <div class="col-3 card rounded background text-light">
-                        <button id="blizzard-count" class="btn btn-outline-light p-2"><i
-                                class="mdi mdi-cheese me-2 p-2">blizz</i></button>
-                    </div>
-                </section>
 
     </main>
 

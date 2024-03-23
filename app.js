@@ -1,4 +1,7 @@
 
+// CHANGE CHEESE TO FISH!!
+
+
 let clickUpgrades = [
     {
         name: 'iceAxe',
@@ -48,6 +51,9 @@ function update() {
 
 }
 update();
+drawIceUpgrades();
+drawFlameUpgrades();
+setInterval(automaticIgloo, 3000);
 
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
@@ -60,7 +66,7 @@ function buyIceAxe() {
         iceAxeUpgrade.quantity++;
         cheese -= iceAxeUpgrade.price;
         console.log('Purchased Ice Axe');
-        drawUpgrades();
+        drawIceUpgrades();
         update();
     } else {
         console.log('No funds, No Ice Axe For You!')
@@ -77,14 +83,30 @@ function buyFlamethrower() {
         flamethrowerUpgrade.quantity++;
         cheese -= flamethrowerUpgrade.price;
         console.log('Purchased Flamethrower');
+        drawFlameUpgrades();
         update();
     } else {
         console.log('No funds, No Flamethrower For You!')
     }
 }
-update();
 
-function drawUpgrades() {
+function automaticIgloo() {
+    const iglooUpgrade = automaticUpgrades.find(upgrade => upgrade.name === 'igloo');
+    if (cheese >= iglooUpgrade.price) {
+        iglooUpgrade.quantity++;
+        cheese -= iglooUpgrade.price;
+        console.log('You got an Igloo!');
+        drawIglooUpgrades();
+        update();
+    } else {
+        console.log('No funds, No Igloo For You!')
+        update();
+    }
+}
+
+
+
+function drawIceUpgrades() {
     console.log('drawing upgrades');
     clickUpgrades.forEach(upgrade => {
         let iceAxeElm = document.getElementById(upgrade.name);
@@ -93,6 +115,30 @@ function drawUpgrades() {
     })
 
 }
-drawUpgrades();
+
+
+function drawFlameUpgrades() {
+    console.log('drawing upgrades');
+    clickUpgrades.forEach(upgrade => {
+        let flameThrowerElm = document.getElementById(upgrade.name);
+        console.log('success', flameThrowerElm);
+        flameThrowerElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
+    })
+
+}
+
+function drawIglooUpgrades() {
+    console.log('drawing upgrades');
+    automaticUpgrades.forEach(upgrade => {
+        let iglooElm = document.getElementById(upgrade.name);
+        console.log('success', iglooElm);
+        iglooElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
+    })
+
+}
+
+
+
+
 
 // use the functions above to make the automatic functions, then set an interval for them
