@@ -8,54 +8,68 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="container-fluid p-5">
+    <header class="container-fluid">
         <section class="row text-center p-3">
             <div class="col-12">
-                <h1 class="fw-bold pixel-color">Pixel Penguin</h1>
+                <h1 class="fw-bold pixel-color p-2 shadow rounded">Pixel Penguin</h1>
                 <section class="row">
                     <div id="mine" class="col-12">
                         <img class="penguin-img" onclick="mine()" src="/assets/pixel-penguin-img.png"
                             alt="8bit penguin">
                     </div>
             </div>
+            <section class="row justify-content-center">
+                <div id="fish-count" class="col-4 card rounded background text-light">
+                    <h3><i class="mdi mdi-fish"></i></h3>
+                </div>
+            </section>
         </section>
     </header>
-    <!-- Cheese Upgrade -->
-    <main class="container-fluid background-light rounded">
-        <section class="row justify-content-center">
-            <div id="cheese-count" class="col-4 card rounded background text-light">
-                <h3><i class="mdi mdi-cheese"></i></h3>
-            </div>
-        </section>
+    <!-- Fish Upgrade -->
+    <main class="container-fluid background-light rounded shadow p-5">
 
         <!-- Ice Axe Click Upgrade -->
         <section class="row ms-1">
-            <div class="col-3 card rounded background text-light">
+            <div class="col-3 card rounded background text-light mb-3 p-2 shadow">
                 <button id="iceAxe" class="btn btn-outline-light p-2" onclick="buyIceAxe()"><i
-                        class="mdi mdi-cheese me-2 p-2">ice
-                        axe</i></button>
+                        class="mdi mdi-fish me-2 p-2"></i></button>
             </div>
-            <div class="col-3 card rounded background text-light">
-                <button id="igloo" class="btn btn-outline-light p-2"><i class="mdi mdi-cheese me-2 p-2">igloo
+            <div class="col-3 d-flex align-items-center">
+                <h5 class="pt-2">Ice Axe</h5>
+            </div>
+
+            <!-- Automatic Igloo -->
+            <div class="col-3 card rounded background text-light mb-3 p-2 shadow">
+                <button id="igloo" class="btn btn-outline-light p-2"><i class="mdi mdi-fish me-2 p-2">
                     </i></button>
+            </div>
+            <div class="col-3 d-flex align-items-center">
+                <h5 class="pt-2">Igloo</h5>
             </div>
         </section>
 
         <!-- Flamethrower Upgrade -->
         <section class="row ms-1">
-            <div class="col-3 card rounded background text-light">
+            <div class="col-3 card rounded background text-light mb-3 p-2 shadow">
                 <button id="flameThrower" class="btn btn-outline-light p-2" onclick="buyFlamethrower()"><i
-                        class="mdi mdi-cheese me-2 p-2">flame</i></button>
+                        class="mdi mdi-fish me-2 p-2"></i></button>
             </div>
-            <div class="col-3 card rounded background text-light">
-                <button id="blizzard-count" class="btn btn-outline-light p-2"><i
-                        class="mdi mdi-cheese me-2 p-2">10</i></button>
+            <div class="col-3 d-flex align-items-center">
+                <h5 class="pt-2">Flamethrower</h5>
             </div>
-            <div class="col-3">
+
+            <!-- Automatic Blizzard  -->
+            <div class="col-3 card rounded background text-light mb-3 p-2 shadow">
+                <button id="blizzard" class="btn btn-outline-light p-2"><i class="mdi mdi-fish me-2 p-2"></i></button>
+            </div>
+            <div class="col-3 d-flex align-items-center">
                 <h5 class="pt-2">Blizzard</h5>
             </div>
         </section>

@@ -35,25 +35,26 @@ let automaticUpgrades = [
 
 ]
 
-let cheese = 0;
+let fish = 0;
 
 
 // Cheese Upgrade
 
 function mine() {
-    cheese++;
+    fish++;
     update();
 }
 
 function update() {
-    const cheeseCountElm = document.getElementById('cheese-count');
-    cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-cheese pt-3"></i></h3>${cheese}`;
+    const cheeseCountElm = document.getElementById('fish-count');
+    cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-fish pt-3"></i></h3>${fish}`;
 
 }
 update();
 drawIceUpgrades();
 drawFlameUpgrades();
 setInterval(automaticIgloo, 3000);
+setInterval(automaticBlizzard, 3000);
 
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
@@ -62,14 +63,14 @@ setInterval(automaticIgloo, 3000);
 
 function buyIceAxe() {
     const iceAxeUpgrade = clickUpgrades.find(upgrade => upgrade.name === 'iceAxe');
-    if (cheese >= iceAxeUpgrade.price) {
+    if (fish >= iceAxeUpgrade.price) {
         iceAxeUpgrade.quantity++;
-        cheese -= iceAxeUpgrade.price;
-        console.log('Purchased Ice Axe');
+        fish -= iceAxeUpgrade.price;
+        // console.log('Purchased Ice Axe');
         drawIceUpgrades();
         update();
     } else {
-        console.log('No funds, No Ice Axe For You!')
+        // console.log('No funds, No Ice Axe For You!')
     }
 
 }
@@ -79,31 +80,44 @@ function buyIceAxe() {
 
 function buyFlamethrower() {
     const flamethrowerUpgrade = clickUpgrades.find(upgrade => upgrade.name === 'flameThrower');
-    if (cheese >= flamethrowerUpgrade.price) {
+    if (fish >= flamethrowerUpgrade.price) {
         flamethrowerUpgrade.quantity++;
-        cheese -= flamethrowerUpgrade.price;
-        console.log('Purchased Flamethrower');
+        fish -= flamethrowerUpgrade.price;
+        // console.log('Purchased Flamethrower');
         drawFlameUpgrades();
         update();
     } else {
-        console.log('No funds, No Flamethrower For You!')
+        // console.log('No funds, No Flamethrower For You!')
     }
 }
 
 function automaticIgloo() {
     const iglooUpgrade = automaticUpgrades.find(upgrade => upgrade.name === 'igloo');
-    if (cheese >= iglooUpgrade.price) {
+    if (fish >= iglooUpgrade.price) {
         iglooUpgrade.quantity++;
-        cheese -= iglooUpgrade.price;
-        console.log('You got an Igloo!');
+        fish -= iglooUpgrade.price;
+        // console.log('You got an Igloo!');
         drawIglooUpgrades();
         update();
     } else {
-        console.log('No funds, No Igloo For You!')
+        // console.log('No funds, No Igloo For You!')
         update();
     }
 }
 
+function automaticBlizzard() {
+    const blizzardUpgrade = automaticUpgrades.find(upgrade => upgrade.name === 'blizzard');
+    if (fish >= blizzardUpgrade.price) {
+        blizzardUpgrade.quantity++;
+        fish -= blizzardUpgrade.price;
+        // console.log('Wow! You got a blizzard');
+        drawIglooUpgrades();
+        update();
+    } else {
+        // console.log('No funds, No Blizzard For You!')
+        update();
+    }
+}
 
 
 function drawIceUpgrades() {
@@ -111,7 +125,7 @@ function drawIceUpgrades() {
     clickUpgrades.forEach(upgrade => {
         let iceAxeElm = document.getElementById(upgrade.name);
         // console.log('success', iceAxeElm);
-        iceAxeElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
+        iceAxeElm.innerHTML = `<span><i class="mdi mdi-fish"></i></span>${upgrade.quantity}`
     })
 
 }
@@ -121,8 +135,8 @@ function drawFlameUpgrades() {
     console.log('drawing upgrades');
     clickUpgrades.forEach(upgrade => {
         let flameThrowerElm = document.getElementById(upgrade.name);
-        console.log('success', flameThrowerElm);
-        flameThrowerElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
+        // console.log('success', flameThrowerElm);
+        flameThrowerElm.innerHTML = `<span><i class="mdi mdi-fish"></i></span>${upgrade.quantity}`
     })
 
 }
@@ -131,12 +145,21 @@ function drawIglooUpgrades() {
     console.log('drawing upgrades');
     automaticUpgrades.forEach(upgrade => {
         let iglooElm = document.getElementById(upgrade.name);
-        console.log('success', iglooElm);
-        iglooElm.innerHTML = `<span><i class="mdi mdi-cheese"></i></span>${upgrade.name}: ${upgrade.quantity}`
+        // console.log('success', iglooElm);
+        iglooElm.innerHTML = `<span><i class="mdi mdi-fish"></i></span>${upgrade.quantity}`
     })
 
 }
 
+function drawBlizzardUpgrades() {
+    console.log('drawing upgrades');
+    automaticUpgrades.forEach(upgrade => {
+        let blizzardElm = document.getElementById(upgrade.name);
+        // console.log('success', blizzardElm);
+        blizzardElm.innerHTML = `<span><i class="mdi mdi-fish"></i></span>${upgrade.quantity}`
+    })
+
+}
 
 
 
