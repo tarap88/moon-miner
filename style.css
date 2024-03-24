@@ -26,6 +26,12 @@ h4 {
     width: 65%;
     object-fit: contain;
     object-position: center;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.penguin-img:active {
+    transform: translateY(-5px);
 }
 
 .background {
