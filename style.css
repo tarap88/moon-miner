@@ -2,7 +2,9 @@ body {
     background-color: #e7caff;
 }
 
-
+.inner-bg {
+    background-color: #d2a9f0;
+}
 
 
 h5 {
@@ -11,6 +13,9 @@ h5 {
     color: #3d2051;
 }
 
+h4 {
+    color: #e7caff;
+}
 
 .pixel-color {
     color: #6D3B8F;
@@ -29,4 +34,8 @@ h5 {
 
 .background-light {
     background-color: #B88EDA;
+}
+
+.footer-bg {
+    background-color: #3d2051;
 }

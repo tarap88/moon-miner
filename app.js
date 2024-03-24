@@ -1,6 +1,4 @@
 
-// CHANGE CHEESE TO FISH!!
-
 
 let clickUpgrades = [
     {
@@ -70,6 +68,7 @@ function buyIceAxe() {
         drawIceUpgrades();
         update();
     } else {
+        window.alert('Not Enough Fish');
         // console.log('No funds, No Ice Axe For You!')
     }
 
@@ -87,6 +86,7 @@ function buyFlamethrower() {
         drawFlameUpgrades();
         update();
     } else {
+        window.alert('Not Enough Fish');
         // console.log('No funds, No Flamethrower For You!')
     }
 }
@@ -161,7 +161,3 @@ function drawBlizzardUpgrades() {
 
 }
 
-
-
-
-// use the functions above to make the automatic functions, then set an interval for them
