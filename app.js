@@ -57,10 +57,10 @@ function update() {
     iglooQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
 
     const flamethrowerQuantity = document.getElementById('flamethrowerQuantity');
-    flamethrowerQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+    flamethrowerQuantity.innerHTML = `${clickUpgrades[1].quantity}`;
 
     const blizzardQuantity = document.getElementById('blizzardQuantity');
-    blizzardQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+    blizzardQuantity.innerHTML = `${clickUpgrades[1].quantity}`;
 
 }
 update();
