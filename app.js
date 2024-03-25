@@ -66,8 +66,8 @@ function update() {
 update();
 drawIceUpgrades();
 drawFlameUpgrades();
-setInterval(automaticIgloo, 3000);
-setInterval(automaticBlizzard, 3000);
+// setInterval(automaticIgloo, 3000);
+setInterval(automaticBlizzard, 10000);
 // setInterval(collectAutoUpgrades, 3000);
 
 // Click Upgrades// 
