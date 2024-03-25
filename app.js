@@ -53,6 +53,7 @@ drawIceUpgrades();
 drawFlameUpgrades();
 setInterval(automaticIgloo, 3000);
 setInterval(automaticBlizzard, 3000);
+setInterval(collectAutoUpgrades, 3000);
 
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
@@ -161,3 +162,12 @@ function drawBlizzardUpgrades() {
 
 }
 
+function collectAutoUpgrades() {
+    let totalAutoFish = 0;
+    automaticUpgrades.forEach(upgrade => {
+        totalAutoFish += upgrade.quantity * upgrade.multiplier;
+        console.log('success')
+    });
+    fish += totalAutoFish;
+    update();
+}

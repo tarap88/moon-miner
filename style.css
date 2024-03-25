@@ -45,3 +45,13 @@ h4 {
 .footer-bg {
     background-color: #3d2051;
 }
+
+.padding-start {
+    padding-left: 125px;
+    color: #3d2051;
+}
+
+.padding-start-stats {
+    padding-left: 150px;
+    color: #3d2051;
+}
