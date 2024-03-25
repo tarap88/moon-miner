@@ -1,4 +1,4 @@
-
+// add this to click upgrades change name  iglooUpgrade.price += 5;
 
 let clickUpgrades = [
     {
@@ -10,7 +10,7 @@ let clickUpgrades = [
 
     {
         name: 'flameThrower',
-        price: 10,
+        price: 100,
         quantity: 0,
         multiplier: 20
     }
@@ -21,25 +21,25 @@ let automaticUpgrades = [
         name: 'igloo',
         price: 5,
         quantity: 0,
-        multiplier: 20
+        multiplier: 25
     },
     {
         name: 'blizzard',
-        price: 10,
+        price: 1000,
         quantity: 0,
-        multiplier: 20
+        multiplier: 30
     },
 
 
 ]
 
 let fish = 0;
-
+let multiplier = 1;
 
 // Cheese Upgrade
 
 function mine() {
-    fish++;
+    fish += 1 * multiplier;
     update();
 }
 
@@ -47,13 +47,28 @@ function update() {
     const cheeseCountElm = document.getElementById('fish-count');
     cheeseCountElm.innerHTML = `<h3><i class="mdi mdi-fish pt-3"></i></h3>${fish}`;
 
+    const multiplierElm = document.getElementById('multiplier');
+    multiplierElm.innerHTML = `${multiplier}`;
+
+    const iceAxeQuantity = document.getElementById('iceAxeQuantity');
+    iceAxeQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+
+    const iglooQuantity = document.getElementById('iglooQuantity');
+    iglooQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+
+    const flamethrowerQuantity = document.getElementById('flamethrowerQuantity');
+    flamethrowerQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+
+    const blizzardQuantity = document.getElementById('blizzardQuantity');
+    blizzardQuantity.innerHTML = `${clickUpgrades[0].quantity}`;
+
 }
 update();
 drawIceUpgrades();
 drawFlameUpgrades();
 setInterval(automaticIgloo, 3000);
 setInterval(automaticBlizzard, 3000);
-setInterval(collectAutoUpgrades, 3000);
+// setInterval(collectAutoUpgrades, 3000);
 
 // Click Upgrades// 
 // REVIEW Could I have done both of these as a forEach so that I don't have so much code?
@@ -65,6 +80,7 @@ function buyIceAxe() {
     if (fish >= iceAxeUpgrade.price) {
         iceAxeUpgrade.quantity++;
         fish -= iceAxeUpgrade.price;
+        multiplier += iceAxeUpgrade.multiplier;
         // console.log('Purchased Ice Axe');
         drawIceUpgrades();
         update();
@@ -83,6 +99,7 @@ function buyFlamethrower() {
     if (fish >= flamethrowerUpgrade.price) {
         flamethrowerUpgrade.quantity++;
         fish -= flamethrowerUpgrade.price;
+        multiplier += flamethrowerUpgrade.multiplier;
         // console.log('Purchased Flamethrower');
         drawFlameUpgrades();
         update();
@@ -97,6 +114,8 @@ function automaticIgloo() {
     if (fish >= iglooUpgrade.price) {
         iglooUpgrade.quantity++;
         fish -= iglooUpgrade.price;
+        iglooUpgrade.price += 5;
+        multiplier += iglooUpgrade.multiplier;
         // console.log('You got an Igloo!');
         drawIglooUpgrades();
         update();
@@ -111,6 +130,8 @@ function automaticBlizzard() {
     if (fish >= blizzardUpgrade.price) {
         blizzardUpgrade.quantity++;
         fish -= blizzardUpgrade.price;
+        blizzardUpgrade.price += 5;
+        multiplier += blizzardUpgrade.multiplier;
         // console.log('Wow! You got a blizzard');
         drawIglooUpgrades();
         update();
@@ -162,7 +183,10 @@ function drawBlizzardUpgrades() {
 
 }
 
-function collectAutoUpgrades() {
+
+
+
+/*function collectAutoUpgrades() {
     let totalAutoFish = 0;
     automaticUpgrades.forEach(upgrade => {
         totalAutoFish += upgrade.quantity * upgrade.multiplier;
@@ -171,3 +195,4 @@ function collectAutoUpgrades() {
     fish += totalAutoFish;
     update();
 }
+*/

@@ -28,14 +28,14 @@
             <!-- Fish Upgrade/ Collect-->
             <section class="row justify-content-center">
                 <div class="col-md-2 card rounded background text-light">
-                    <i class="mdi mdi-cursor-default-click-outline "></i>
+                    <i class="mdi mdi-cursor-default-click-outline"></i><span id="multiplier"></span>
                 </div>
                 <div id="fish-count" class="col-4 card rounded background text-light">
                     <h3><i class="mdi mdi-fish"></i></h3>
                 </div>
                 <div class="col-md-2 card rounded background text-light">
-                    <i class="mdi mdi-timer-outline  "></i>
-                </div>
+                    <i class="mdi mdi-timer-outline "></i>
+                    <h6>+15secs</h6>
             </section>
         </section>
     </header>
@@ -96,12 +96,51 @@
                 <h6 class="fw-bold">AUTOMATIC STATS</h6>
             </div>
         </div>
+
+        <!-- Collect Ice Axe -->
         <div class="inner-container card rounded shadow inner-bg m-3 p-5">
+            <section class="row ms-5">
+                <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+                    <i class="mdi mdi-arrow-up-thick me-2 p-2"> Ice Axe</i>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-end">
+                    <div id="iceAxeQuantity">
+                        <h6>Ice Axe</h6>
+                    </div>
+                </div>
 
+                <!-- Collect Igloo -->
 
+                <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+                    <i class="mdi mdi-timer-plus-outline me-2 p-2"> Igloo</i>
+                </div>
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                    <div id="iglooQuantity"></div>
+                </div>
+            </section>
 
+            <!-- Flamethrower -->
+            <section class="row ms-5">
+                <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+                    <i class="mdi mdi-arrow-up-thick me-2 p-2"> Flamethrower</i>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-end">
+                    <div id="flamethrowerQuantity"></div>
+                </div>
 
+                <!-- Collect Blizzard -->
+
+                <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+                    <i class="mdi mdi-timer-plus-outline me-2 p-2"> Blizzard</i>
+                </div>
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                    <div id="blizzardQuantity"></div>
+                </div>
+            </section>
         </div>
+
+
+
     </main>
 
 
@@ -116,3 +155,50 @@
 </body>
 
 </html>
+
+
+
+
+
+<!-- Collect Ice Axe -->
+<div class="inner-container card rounded shadow inner-bg m-3 p-5">
+    <section class="row ms-5">
+        <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+            <i class="mdi mdi-arrow-up-thick me-2 p-2"> Ice Axe</i>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-end pe-2">
+            <div id="iceAxeQuantity"></div>
+        </div>
+
+        <!-- Collect Igloo -->
+
+        <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+            <i class="mdi mdi-timer-plus-outline me-2 p-2"> Igloo</i>
+        </div>
+        <div class="col-md-2 d-flex align-items-center justify-content-end pe-2">
+            <div id="iglooQuantity"></div>
+        </div>
+    </section>
+
+    <!-- Flamethrower -->
+    <section class="row ms-5">
+        <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+            <i class="mdi mdi-arrow-up-thick me-2 p-2"> Flamethrower</i>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-end pe-2">
+            <div id="flamethrowerQuantity"></div>
+        </div>
+
+        <!-- Collect Blizzard -->
+
+        <div class="col-md-3 card rounded background text-light mb-3 p-2 shadow">
+            <i class="mdi mdi-timer-plus-outline me-2 p-2"> Blizzard</i>
+        </div>
+        <div class="col-md-2 d-flex align-items-center justify-content-end pe-2">
+            <div id="blizzardQuantity"></div>
+        </div>
+    </section>
+</div>
+
+</section>
+</div>
